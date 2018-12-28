@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用键盘控制图片</title>
+	<style>
+		img{
+			position:absolute;
+			
+			width:80px;
+			height:80px;
+		}
+		*{
+			margin:0px;
+			padding:0px;
+		}
+	</style>
+</head>
+<body>
+	
+		<img src="images/placeholder.jpg" alt="小熊猫" id="panda">
+	
+	
+</body>
+<script>
+	//获取图片
+	panda = document.getElementById("panda");
+	foot=10;
+	sx=0;
+	sy=0;
+	height=document.documentElement.clientHeight;
+	width=document.documentElement.clientWidth;
+	maxW=width-90;
+	maxH=height-90;
+	// alert(height);//616
+	// alert(width);//795
+	// alert(0);
+	//获取用户键盘按键上下左右指示的代码(37,38,39,40);
+	onkeydown=function(event){
+		
+		switch(event.keyCode){
+				//向左移动
+			case 37:
+				if(sx>0){
+					sx=sx-foot;
+				}else{
+					break;
+				}
+			
+				
+				break;
+				//向上移动
+			case 38:
+				if(sy>0){
+					sy=sy-foot;
+				}else{
+					break;
+				}
+				
+				break;
+				//向右移动
+			case 39:
+				if(sx>maxW){
+					break;
+				}else{
+					sx=sx+foot;
+					
+				}
+				
+				break;
+				//向下移动
+			case 40:
+				if(sy>maxH){
+					break;
+				}else{
+					
+					sy=sy+foot;
+				}
+				
+				break;
+
+		}
+		panda.style.left=sx+"px";
+		panda.style.top=sy+"px";
+	}
+</script>
+</html>

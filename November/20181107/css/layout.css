@@ -1,0 +1,6 @@
+#imagegally {
+	list-style:none;
+}
+#imagegally li{
+	display:inline;
+}

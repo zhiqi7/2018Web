@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>My IamgeGally</title>
+</head>
+<h1>城市之光</h1>
+<body>
+	<ul>
+		<li><a href="images/beijing.jpg" title="北京-热烈奔放又古老" onclick="showPic(this);return false;">北京</a></li>
+		<li><a href="images/Paris.jpg" title="巴黎-自由宏伟又放浪"  onclick="showPic(this);return false;">巴黎</a></li>
+		<li><a href="images/ny.jpg" title="纽约-纸醉金迷之都"  onclick="showPic(this);return false;">纽约</a></li>
+		<li><a href="images/sideny.jpg" title="悉尼—悉尼歌剧院"  onclick="showPic(this);return false;">悉尼</a></li>
+	</ul>
+	<img src="images/placeholder.jpg" alt="占位图片" id="ph">
+	<p id="description">这是一个描述图片的文字</p>
+</body>
+<script>
+	var ph=document.getElementById("ph");	
+	function showPic(whichpic){
+		
+		var source=whichpic.getAttribute("href");
+		var text=whichpic.getAttribute("title");
+		ph.setAttribute("src",source);
+		desc=document.getElementById("description");
+		body_element=document.getElementsByTagName("body")[0];
+		desc.firstChild.nodeValue = text;
+	}
+</script>
+</html>
